@@ -1,0 +1,33 @@
+<?php
+
+namespace Practicas\Bundle\Practica1Bundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+
+class DefaultController extends Controller
+{
+    
+    public function indexAction($name)
+    {
+		$em = $this->getDoctrine()->getEntityManager();
+    	$cursos= $em->getRepository('Practica1Bundle:Curso')->findAll();
+    	$usuarios= null;
+        return $this->render('Practica1Bundle:Default:'.$name.'.html.twig', array('name' => $name,'cursos' => $cursos,'usuarios' => $usuarios));
+    }
+
+	public function userAction($name)
+    {
+        return $this->render('Practica1Bundle:Default:'.$name.'.html.twig', 		array('name' => $name));
+    }
+    
+   public function cursoAction($name)
+    {
+    	$em = $this->getDoctrine()->getEntityManager();
+		$cursos= $em->getRepository('Practica1Bundle:Curso')->findAll();
+    	
+		$curso= $em->getRepository('Practica1Bundle:Curso')->findOneByNombrecurso($name);
+		$usuarios= $em->getRepository('Practica1Bundle:Usuario')->findByCurso($curso->getId());
+    		return $this->render('Practica1Bundle:Default:plantilla.html.twig', array('name' => $name,'cursos' => $cursos,'usuarios' => $usuarios));
+    	}
+}

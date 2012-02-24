@@ -1,0 +1,9 @@
+{% extends "::base.html.twig" %}
+
+{% block title "Hello " ~ name2 %}
+
+{% block body %}
+    <h1>Hello {{ name2 }}!</h1>
+{% endblock %}
+
+{% set code = code(_self) %}

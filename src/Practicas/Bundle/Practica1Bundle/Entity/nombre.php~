@@ -1,0 +1,77 @@
+<?php
+
+namespace Practicas\Bundle\Practica1Bundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Practicas\Bundle\Practica1Bundle\Entity\nombre
+ */
+class nombre
+{
+    /**
+     * @var integer $id
+     */
+    private $id;
+
+    /**
+     * @var string $nombre
+     */
+    private $nombre;
+
+    /**
+     * @var string $apellidos
+     */
+    private $apellidos;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nombre
+     *
+     * @param string $nombre
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string 
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
+     * Set apellidos
+     *
+     * @param string $apellidos
+     */
+    public function setApellidos($apellidos)
+    {
+        $this->apellidos = $apellidos;
+    }
+
+    /**
+     * Get apellidos
+     *
+     * @return string 
+     */
+    public function getApellidos()
+    {
+        return $this->apellidos;
+    }
+}

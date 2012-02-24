@@ -1,0 +1,20 @@
+Practicas\Bundle\Practica1Bundle\Entity\Curso:
+  type: entity
+  table: null
+  fields:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+    nombrecurso:
+      type: string
+      length: 255
+    descripcion:
+      type: string
+      length: 255
+  ManytoOne:
+    id:
+      targetEntity: Usuarios
+      mappedBy: curso
+  lifecycleCallbacks: {  }
