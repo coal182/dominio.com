@@ -57,8 +57,8 @@ class __TwigTemplate_92be5c96c4aad90900934b8b4230c841 extends Twig_Template
     public function block_stylesheets($context, array $blocks = array())
     {
         // line 7
-        echo "        <link href=\"/Symfony1/web/css/reset-mayer.css\" rel=\"stylesheet\" title=\"default\" type=\"text/css\" />
-\t\t\t<link href=\"/Symfony1/web/css/estilo.css\" rel=\"stylesheet\" title=\"default\" type=\"text/css\" />
+        echo "        <link href=\"/dominio.com/web/css/reset-mayer.css\" rel=\"stylesheet\" title=\"default\" type=\"text/css\" />
+\t\t\t<link href=\"/dominio.com/web/css/estilo.css\" rel=\"stylesheet\" title=\"default\" type=\"text/css\" />
 
         ";
     }
