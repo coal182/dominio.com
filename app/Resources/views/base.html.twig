@@ -4,8 +4,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
-        <link href="/dominio.com/web/css/reset-mayer.css" rel="stylesheet" title="default" type="text/css" />
-			<link href="/dominio.com/web/css/estilo.css" rel="stylesheet" title="default" type="text/css" />
+        <link href="{{asset('css/reset-mayer.css') }}" rel="stylesheet" title="default" type="text/css" />
+			<link href="{{asset('css/estilo.css') }}" rel="stylesheet" title="default" type="text/css" />
 
         {% endblock %}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />

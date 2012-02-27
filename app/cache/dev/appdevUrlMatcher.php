@@ -144,8 +144,8 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         }
 
         // Practica1Bundle_homepage
-        if (0 === strpos($pathinfo, '/static') && preg_match('#^/static/(?P<name>[^/]+?)$#xs', $pathinfo, $matches)) {
-            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::indexAction',)), array('_route' => 'Practica1Bundle_homepage'));
+        if ($pathinfo === '/home') {
+            return array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::indexAction',  'name' => 'Cristian',  '_route' => 'Practica1Bundle_homepage',);
         }
 
         // Practica1Bundle_userpage
@@ -156,6 +156,11 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // Practica1Bundle_cursopage
         if (0 === strpos($pathinfo, '/curso') && preg_match('#^/curso\\-(?P<name>[^/]+?)$#xs', $pathinfo, $matches)) {
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::cursoAction',)), array('_route' => 'Practica1Bundle_cursopage'));
+        }
+
+        // Practica1Bundle_adminpage
+        if ($pathinfo === '/admin') {
+            return array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::adminAction',  '_route' => 'Practica1Bundle_adminpage',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

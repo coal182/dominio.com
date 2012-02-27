@@ -12,7 +12,7 @@
 <div id="menu">{% block menu %}
 <ul>
     {% for curso in cursos %}
-        <li><a href="/Symfony1/web/app_dev.php/curso-{{curso.nombrecurso}}">{{ curso.nombrecurso }}</a></li>
+        <li><a href="curso-{{curso.nombrecurso}}">{{ curso.nombrecurso }}</a></li>
     {% endfor %}
 </ul>{% endblock %}</div>
 <div id="contenido">{% block contenido %}

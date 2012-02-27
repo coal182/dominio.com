@@ -1,0 +1,57 @@
+{% extends "::base.html.twig" %}
+
+{% block title "Administration" %}
+{% block stylesheets %}
+        <link href="{{asset('css/reset-mayer.css') }}" rel="stylesheet" title="default" type="text/css" />
+			<link href="{{asset('css/backend.css') }}" rel="stylesheet" title="default" type="text/css" />
+
+        {% endblock %}
+{% block body %}
+             
+        <div id="container">
+            <div id="header">
+		<a id="btnpanel" href="backend.jsp"><h1>Kiwi: Panel de control</h1></a>
+		<a id="btnver" href="index.jsp">Ver Página</a>
+		<span id="welcomeuser">
+                   
+                    <a href="controller?action=exit">Exit</a>
+                </span>		
+            </div>
+            <div id="body">
+		<div id="title">
+                    <a id="btnnew" href="newentry.jsp">New Entry</a>	
+			<h2>Control Panel</h2>				
+		</div>
+		<div id="bar">
+                    <ul>
+			<li><a href="entries.jsp" id="firstmenu">Entries</a></li>
+			<li><a href="pages.jsp">Pages</a></li>
+			<li><a href="polls.jsp">Polls</a></li>	
+			<li><a href="forms.jsp">Forms</a></li>
+			<li><a href="users.jsp">Users</a></li>	
+			<li><a href="modules.jsp">Modules</a></li>	
+			<li><a href="templates.jsp">Templates</a></li>	
+			<li><a href="settings.jsp" id="lastmenu">Settings</a></li>						
+		</ul>				
+		</div>
+                    <div id="content">
+                	<table id="entrieslist">
+    			{% for curso in cursos %}
+        			<tr><td>{{ curso.nombrecurso }}</td><td id='buttons'><a href='#' id='deleteentry'></a>
+                		<a href='#' id='editentry'></a></td></tr>
+    			{% endfor %}
+                 
+        </table>		
+                    </div>
+                    <div class="clean"></div>
+                </div>
+            
+            <div id="footer">
+			
+            </div>		
+	</div>
+    
+    
+{% endblock %}
+
+{% set code = code(_self) %}

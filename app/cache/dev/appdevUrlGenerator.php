@@ -36,6 +36,7 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'Practica1Bundle_homepage' => true,
        'Practica1Bundle_userpage' => true,
        'Practica1Bundle_cursopage' => true,
+       'Practica1Bundle_adminpage' => true,
     );
 
     /**
@@ -161,7 +162,7 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
 
     private function getPractica1Bundle_homepageRouteInfo()
     {
-        return array(array (  0 => 'name',), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::indexAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'name',  ),  1 =>   array (    0 => 'text',    1 => '/static',  ),));
+        return array(array (), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::indexAction',  'name' => 'Cristian',), array (), array (  0 =>   array (    0 => 'text',    1 => '/home',  ),));
     }
 
     private function getPractica1Bundle_userpageRouteInfo()
@@ -172,5 +173,10 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getPractica1Bundle_cursopageRouteInfo()
     {
         return array(array (  0 => 'name',), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::cursoAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '-',    2 => '[^/]+?',    3 => 'name',  ),  1 =>   array (    0 => 'text',    1 => '/curso',  ),));
+    }
+
+    private function getPractica1Bundle_adminpageRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::adminAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin',  ),));
     }
 }

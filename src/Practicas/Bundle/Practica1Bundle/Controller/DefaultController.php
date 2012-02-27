@@ -13,7 +13,7 @@ class DefaultController extends Controller
 		$em = $this->getDoctrine()->getEntityManager();
     	$cursos= $em->getRepository('Practica1Bundle:Curso')->findAll();
     	$usuarios= null;
-        return $this->render('Practica1Bundle:Default:'.$name.'.html.twig', array('name' => $name,'cursos' => $cursos,'usuarios' => $usuarios));
+        return $this->render('Practica1Bundle:Default:plantilla.html.twig', array('name' => $name,'cursos' => $cursos,'usuarios' => $usuarios));
     }
 
 	public function userAction($name)
@@ -30,4 +30,11 @@ class DefaultController extends Controller
 		$usuarios= $em->getRepository('Practica1Bundle:Usuario')->findByCurso($curso->getId());
     		return $this->render('Practica1Bundle:Default:plantilla.html.twig', array('name' => $name,'cursos' => $cursos,'usuarios' => $usuarios));
     	}
+   public function adminAction()
+    {
+	$em = $this->getDoctrine()->getEntityManager();
+		$cursos= $em->getRepository('Practica1Bundle:Curso')->findAll();
+
+	return $this->render('Practica1Bundle:Default:backend.html.twig',array('cursos' => $cursos));
+    }
 }
