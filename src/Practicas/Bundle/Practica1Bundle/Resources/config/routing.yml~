@@ -1,11 +1,19 @@
 Practica1Bundle_homepage:
-    pattern:  /static/{name}
-    defaults: { _controller: Practica1Bundle:Default:index }
+    pattern:  /home
+    defaults: { _controller: Practica1Bundle:Default:index, name:Cristian}
 
 Practica1Bundle_userpage:
     pattern:  /user/{name}
     defaults: { _controller: Practica1Bundle:Default:user }
 
 Practica1Bundle_cursopage:
-    pattern:  /curso/{name}
+    pattern:  /curso-{name}
     defaults: { _controller: Practica1Bundle:Default:curso }
+
+Practica1Bundle_adminpage:
+    pattern:  /admin
+    defaults: { _controller: Practica1Bundle:Default:admin}
+
+Practica1Bundle_deletecurso:
+    pattern:  /delete/{name}
+    defaults: { _controller: Practica1Bundle:Default:deletecurso}

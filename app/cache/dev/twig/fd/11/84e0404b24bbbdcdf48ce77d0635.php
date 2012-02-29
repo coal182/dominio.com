@@ -88,7 +88,9 @@ class __TwigTemplate_fd1184e0404b24bbbdcdf48ce77d0635 extends Twig_Template
             // line 40
             echo "        \t\t\t<tr><td>";
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "curso"), "nombrecurso"), "html", null, true);
-            echo "</td><td id='buttons'><a href='#' id='deleteentry'></a>
+            echo "</td><td id='buttons'><a href='delete/";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "curso"), "id"), "html", null, true);
+            echo "' id='deleteentry'></a>
                 \t\t<a href='#' id='editentry'></a></td></tr>
     \t\t\t";
         }

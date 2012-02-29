@@ -13,8 +13,8 @@ Practicas\Bundle\Practica1Bundle\Entity\Curso:
     descripcion:
       type: string
       length: 255
-  ManytoOne:
-    id:
-      targetEntity: Usuarios
+  oneToMany:
+    cursoid:
+      targetEntity: Usuario
       mappedBy: curso
   lifecycleCallbacks: {  }

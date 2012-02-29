@@ -37,7 +37,7 @@
                     <div id="content">
                 	<table id="entrieslist">
     			{% for curso in cursos %}
-        			<tr><td>{{ curso.nombrecurso }}</td><td id='buttons'><a href='#' id='deleteentry'></a>
+        			<tr><td>{{ curso.nombrecurso }}</td><td id='buttons'><a href='delete/{{ curso.id }}' id='deleteentry'></a>
                 		<a href='#' id='editentry'></a></td></tr>
     			{% endfor %}
                  

@@ -74,4 +74,33 @@ class Curso
     {
         return $this->descripcion;
     }
+    /**
+     * @var Practicas\Bundle\Practica1Bundle\Entity\Usuario
+     */
+    private $cursoid;
+
+    public function __construct()
+    {
+        $this->cursoid = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add cursoid
+     *
+     * @param Practicas\Bundle\Practica1Bundle\Entity\Usuario $cursoid
+     */
+    public function addUsuario(\Practicas\Bundle\Practica1Bundle\Entity\Usuario $cursoid)
+    {
+        $this->cursoid[] = $cursoid;
+    }
+
+    /**
+     * Get cursoid
+     *
+     * @return Doctrine\Common\Collections\Collection 
+     */
+    public function getCursoid()
+    {
+        return $this->cursoid;
+    }
 }

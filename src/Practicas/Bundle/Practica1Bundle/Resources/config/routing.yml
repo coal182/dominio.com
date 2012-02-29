@@ -13,3 +13,7 @@ Practica1Bundle_cursopage:
 Practica1Bundle_adminpage:
     pattern:  /admin
     defaults: { _controller: Practica1Bundle:Default:admin}
+
+Practica1Bundle_deletecurso:
+    pattern:  /delete/{idcurso}
+    defaults: { _controller: Practica1Bundle:Default:deletecurso}

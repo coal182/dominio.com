@@ -1,10 +1,11 @@
 <?php
 namespace Practicas\Bundle\Practica1Bundle\DataFixtures;
 use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Practicas\Bundle\Practica1Bundle\Entity\Curso;
 
-class LoadCursos implements FixtureInterface
+class LoadCursos extends AbstractFixture implements OrderedFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
@@ -23,5 +24,11 @@ foreach ($cursos as $curso) {
 }
 $manager->flush();
 }
+
+   public function getOrder()
+    {
+        return 2; // the order in which fixtures will be loaded
+    }
+
 }
 ?>

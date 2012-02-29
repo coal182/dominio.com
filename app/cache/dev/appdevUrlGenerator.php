@@ -37,6 +37,7 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'Practica1Bundle_userpage' => true,
        'Practica1Bundle_cursopage' => true,
        'Practica1Bundle_adminpage' => true,
+       'Practica1Bundle_deletecurso' => true,
     );
 
     /**
@@ -178,5 +179,10 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getPractica1Bundle_adminpageRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::adminAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin',  ),));
+    }
+
+    private function getPractica1Bundle_deletecursoRouteInfo()
+    {
+        return array(array (  0 => 'idcurso',), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::deletecursoAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'idcurso',  ),  1 =>   array (    0 => 'text',    1 => '/delete',  ),));
     }
 }

@@ -163,6 +163,11 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::adminAction',  '_route' => 'Practica1Bundle_adminpage',);
         }
 
+        // Practica1Bundle_deletecurso
+        if (0 === strpos($pathinfo, '/delete') && preg_match('#^/delete/(?P<idcurso>[^/]+?)$#xs', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::deletecursoAction',)), array('_route' => 'Practica1Bundle_deletecurso'));
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

@@ -16,6 +16,8 @@ Practicas\Bundle\Practica1Bundle\Entity\Usuario:
     telefono:
       type: string
       length: 9
+  manyToOne:
     curso:
-      type: integer
+      targetEntity: Curso
+      inversedBy: cursoid
   lifecycleCallbacks: {  }
