@@ -1,0 +1,27 @@
+<?php
+
+namespace Practicas\Bundle\Practica1Bundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Practicas\Bundle\Practica1Bundle\Entity\direccion
+ */
+class direccion
+{
+    /**
+     * @var integer $id
+     */
+    private $id;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}

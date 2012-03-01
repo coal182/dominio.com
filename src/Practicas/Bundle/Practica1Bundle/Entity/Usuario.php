@@ -28,7 +28,7 @@ class Usuario
      * @var string $telefono
      */
     private $telefono;
-
+	
     /**
      * @var integer $curso
      */
@@ -123,5 +123,36 @@ class Usuario
     public function getCurso()
     {
         return $this->curso;
+    }
+    
+    public function __toString()
+    {
+    		return $this->nombrecurso;
+    	}
+
+    /**
+     * @var string $direccion
+     */
+    private $direccion;
+
+
+    /**
+     * Set direccion
+     *
+     * @param string $direccion
+     */
+    public function setDireccion($direccion)
+    {
+        $this->direccion = $direccion;
+    }
+
+    /**
+     * Get direccion
+     *
+     * @return string 
+     */
+    public function getDireccion()
+    {
+        return $this->direccion;
     }
 }

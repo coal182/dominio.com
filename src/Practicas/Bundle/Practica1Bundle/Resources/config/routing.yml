@@ -17,3 +17,35 @@ Practica1Bundle_adminpage:
 Practica1Bundle_deletecurso:
     pattern:  /delete/{idcurso}
     defaults: { _controller: Practica1Bundle:Default:deletecurso}
+
+Practica1Bundle_editcurso:
+    pattern:  /edit/{idcurso}
+    defaults: { _controller: Practica1Bundle:Default:editcurso}
+    
+Practica1Bundle_manage_usuario:
+    resource: "@Practica1Bundle/Resources/config/routing/usuario.yml"
+    prefix:   /manage/usuario
+    
+Practica1Bundle_manage_curso:
+    resource: "@Practica1Bundle/Resources/config/routing/curso.yml"
+    prefix:   /manage/curso
+    
+Practica1Bundle_contactopage:
+    pattern:  /contacto
+    defaults: { _controller: Practica1Bundle:Default:contacto}
+    
+Practica1Bundle_enviarmail:
+    pattern:  /enviarmail
+    defaults: { _controller: Practica1Bundle:Default:enviarmail}
+    
+Practica1Bundle_nuevaentrada:
+    pattern:  /nuevaentrada
+    defaults: { _controller: Practica1Bundle:Default:nuevaentrada}
+    
+Practica1Bundle_crearentrada:
+    pattern:  /crearentrada
+    defaults: { _controller: Practica1Bundle:Default:crearentrada}
+    
+Practica1Bundle_listarentradas:
+    pattern:  /listarentradas
+    defaults: { _controller: Practica1Bundle:Default:listarentradas}

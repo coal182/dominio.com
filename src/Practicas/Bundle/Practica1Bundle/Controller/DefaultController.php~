@@ -45,7 +45,19 @@ class DefaultController extends Controller
 	$em->remove($curso);
 	$em->flush();
 	$cursos= $em->getRepository('Practica1Bundle:Curso')->findAll();
-	return $this->redirect($this->generateUrl('/app_dev.php/admin'));
+	return $this->redirect($this->generateUrl('home'));
+
+    }
+    
+    public function editcursoAction($idcurso)
+    {
+		$em = $this->getDoctrine()->getEntityManager();
+		$cursos= $em->getRepository('Practica1Bundle:Curso')->findAll();
+		$curso= $em->getRepository('Practica1Bundle:Curso')->findOneByid($idcurso);
+		$nombrecurso=$curso->getNombrecurso();
+		$descripcion=$curso->getDescripcion();
+		
+	return $this->render('Practica1Bundle:Default:editarcurso.html.twig',array('nombrecurso' => $nombrecurso, 'descripcion' => $descripcion));
 
     }
 }

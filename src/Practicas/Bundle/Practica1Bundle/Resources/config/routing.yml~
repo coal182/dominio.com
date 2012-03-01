@@ -15,5 +15,13 @@ Practica1Bundle_adminpage:
     defaults: { _controller: Practica1Bundle:Default:admin}
 
 Practica1Bundle_deletecurso:
-    pattern:  /delete/{name}
+    pattern:  /delete/{idcurso}
     defaults: { _controller: Practica1Bundle:Default:deletecurso}
+
+Practica1Bundle_editcurso:
+    pattern:  /edit/{idcurso}
+    defaults: { _controller: Practica1Bundle:Default:editcurso}
+    
+Practica1Bundle_manage_usuario:
+    resource: "@Practica1Bundle/Resources/config/routing/usuario.yml"
+    prefix:   /manage/usuario

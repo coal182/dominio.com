@@ -168,6 +168,148 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::deletecursoAction',)), array('_route' => 'Practica1Bundle_deletecurso'));
         }
 
+        // Practica1Bundle_editcurso
+        if (0 === strpos($pathinfo, '/edit') && preg_match('#^/edit/(?P<idcurso>[^/]+?)$#xs', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::editcursoAction',)), array('_route' => 'Practica1Bundle_editcurso'));
+        }
+
+        if (0 === strpos($pathinfo, '/manage/usuario')) {
+            // manage_usuario
+            if (rtrim($pathinfo, '/') === '/manage/usuario') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'manage_usuario');
+                }
+                return array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\UsuarioController::indexAction',  '_route' => 'manage_usuario',);
+            }
+
+            // manage_usuario_show
+            if (preg_match('#^/manage/usuario/(?P<id>[^/]+?)/show$#xs', $pathinfo, $matches)) {
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\UsuarioController::showAction',)), array('_route' => 'manage_usuario_show'));
+            }
+
+            // manage_usuario_new
+            if ($pathinfo === '/manage/usuario/new') {
+                return array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\UsuarioController::newAction',  '_route' => 'manage_usuario_new',);
+            }
+
+            // manage_usuario_create
+            if ($pathinfo === '/manage/usuario/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_manage_usuario_create;
+                }
+                return array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\UsuarioController::createAction',  '_route' => 'manage_usuario_create',);
+            }
+            not_manage_usuario_create:
+
+            // manage_usuario_edit
+            if (preg_match('#^/manage/usuario/(?P<id>[^/]+?)/edit$#xs', $pathinfo, $matches)) {
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\UsuarioController::editAction',)), array('_route' => 'manage_usuario_edit'));
+            }
+
+            // manage_usuario_update
+            if (preg_match('#^/manage/usuario/(?P<id>[^/]+?)/update$#xs', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_manage_usuario_update;
+                }
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\UsuarioController::updateAction',)), array('_route' => 'manage_usuario_update'));
+            }
+            not_manage_usuario_update:
+
+            // manage_usuario_delete
+            if (preg_match('#^/manage/usuario/(?P<id>[^/]+?)/delete$#xs', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_manage_usuario_delete;
+                }
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\UsuarioController::deleteAction',)), array('_route' => 'manage_usuario_delete'));
+            }
+            not_manage_usuario_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/manage/curso')) {
+            // manage_curso
+            if (rtrim($pathinfo, '/') === '/manage/curso') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'manage_curso');
+                }
+                return array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\CursoController::indexAction',  '_route' => 'manage_curso',);
+            }
+
+            // manage_curso_show
+            if (preg_match('#^/manage/curso/(?P<id>[^/]+?)/show$#xs', $pathinfo, $matches)) {
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\CursoController::showAction',)), array('_route' => 'manage_curso_show'));
+            }
+
+            // manage_curso_new
+            if ($pathinfo === '/manage/curso/new') {
+                return array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\CursoController::newAction',  '_route' => 'manage_curso_new',);
+            }
+
+            // manage_curso_create
+            if ($pathinfo === '/manage/curso/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_manage_curso_create;
+                }
+                return array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\CursoController::createAction',  '_route' => 'manage_curso_create',);
+            }
+            not_manage_curso_create:
+
+            // manage_curso_edit
+            if (preg_match('#^/manage/curso/(?P<id>[^/]+?)/edit$#xs', $pathinfo, $matches)) {
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\CursoController::editAction',)), array('_route' => 'manage_curso_edit'));
+            }
+
+            // manage_curso_update
+            if (preg_match('#^/manage/curso/(?P<id>[^/]+?)/update$#xs', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_manage_curso_update;
+                }
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\CursoController::updateAction',)), array('_route' => 'manage_curso_update'));
+            }
+            not_manage_curso_update:
+
+            // manage_curso_delete
+            if (preg_match('#^/manage/curso/(?P<id>[^/]+?)/delete$#xs', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_manage_curso_delete;
+                }
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\CursoController::deleteAction',)), array('_route' => 'manage_curso_delete'));
+            }
+            not_manage_curso_delete:
+
+        }
+
+        // Practica1Bundle_contactopage
+        if ($pathinfo === '/contacto') {
+            return array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::contactoAction',  '_route' => 'Practica1Bundle_contactopage',);
+        }
+
+        // Practica1Bundle_enviarmail
+        if ($pathinfo === '/enviarmail') {
+            return array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::enviarmailAction',  '_route' => 'Practica1Bundle_enviarmail',);
+        }
+
+        // Practica1Bundle_nuevaentrada
+        if ($pathinfo === '/nuevaentrada') {
+            return array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::nuevaentradaAction',  '_route' => 'Practica1Bundle_nuevaentrada',);
+        }
+
+        // Practica1Bundle_crearentrada
+        if ($pathinfo === '/crearentrada') {
+            return array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::crearentradaAction',  '_route' => 'Practica1Bundle_crearentrada',);
+        }
+
+        // Practica1Bundle_listarentradas
+        if ($pathinfo === '/listarentradas') {
+            return array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::listarentradasAction',  '_route' => 'Practica1Bundle_listarentradas',);
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

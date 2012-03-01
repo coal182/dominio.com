@@ -1,0 +1,30 @@
+manage_usuario:
+    pattern:  /
+    defaults: { _controller: "Practica1Bundle:Usuario:index" }
+
+manage_usuario_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "Practica1Bundle:Usuario:show" }
+
+manage_usuario_new:
+    pattern:  /new
+    defaults: { _controller: "Practica1Bundle:Usuario:new" }
+
+manage_usuario_create:
+    pattern:  /create
+    defaults: { _controller: "Practica1Bundle:Usuario:create" }
+    requirements: { _method: post }
+
+manage_usuario_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "Practica1Bundle:Usuario:edit" }
+
+manage_usuario_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "Practica1Bundle:Usuario:update" }
+    requirements: { _method: post }
+
+manage_usuario_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "Practica1Bundle:Usuario:delete" }
+    requirements: { _method: post }

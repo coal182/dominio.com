@@ -1,0 +1,18 @@
+Practicas\Bundle\Practica1Bundle\Entity\Entrada:
+  type: entity
+  table: null
+  fields:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+    titulo:
+      type: string
+      length: 255
+    contenido:
+      type: string
+      length: 255
+    creado:
+      type: datetime
+  lifecycleCallbacks: {  }

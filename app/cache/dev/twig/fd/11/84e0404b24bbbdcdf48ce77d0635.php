@@ -10,6 +10,9 @@ class __TwigTemplate_fd1184e0404b24bbbdcdf48ce77d0635 extends Twig_Template
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'stylesheets' => array($this, 'block_stylesheets'),
+            'nuevo' => array($this, 'block_nuevo'),
+            'titulo' => array($this, 'block_titulo'),
+            'content' => array($this, 'block_content'),
             'body' => array($this, 'block_body'),
         );
     }
@@ -21,7 +24,7 @@ class __TwigTemplate_fd1184e0404b24bbbdcdf48ce77d0635 extends Twig_Template
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        // line 57
+        // line 60
         $context["code"] = $this->env->getExtension('demo')->getCode($this);
         $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
     }
@@ -47,6 +50,48 @@ class __TwigTemplate_fd1184e0404b24bbbdcdf48ce77d0635 extends Twig_Template
         ";
     }
 
+    // line 22
+    public function block_nuevo($context, array $blocks = array())
+    {
+    }
+
+    // line 23
+    public function block_titulo($context, array $blocks = array())
+    {
+        echo "Control Panel";
+    }
+
+    // line 39
+    public function block_content($context, array $blocks = array())
+    {
+        // line 40
+        echo "                \t<table id=\"entrieslist\">
+    \t\t\t";
+        // line 41
+        $context['_parent'] = (array) $context;
+        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "cursos"));
+        foreach ($context['_seq'] as $context["_key"] => $context["curso"]) {
+            // line 42
+            echo "        \t\t\t<tr><td>";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "curso"), "nombrecurso"), "html", null, true);
+            echo "</td><td id='buttons'><a href='delete/";
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "curso"), "id"), "html", null, true);
+            echo "' id='deleteentry'></a>
+                \t\t<a href='edit/";
+            // line 43
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "curso"), "id"), "html", null, true);
+            echo "' id='editentry'></a></td></tr>
+    \t\t\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['curso'], $context['_parent'], $context['loop']);
+        $context = array_merge($_parent, array_intersect_key($context, $_parent));
+        // line 45
+        echo "                 
+        </table>\t
+                            ";
+    }
+
     // line 9
     public function block_body($context, array $blocks = array())
     {
@@ -63,8 +108,14 @@ class __TwigTemplate_fd1184e0404b24bbbdcdf48ce77d0635 extends Twig_Template
             </div>
             <div id=\"body\">
 \t\t<div id=\"title\">
-                    <a id=\"btnnew\" href=\"newentry.jsp\">New Entry</a>\t
-\t\t\t<h2>Control Panel</h2>\t\t\t\t
+                    \t";
+        // line 22
+        $this->displayBlock('nuevo', $context, $blocks);
+        // line 23
+        echo "\t\t\t<h2>";
+        $this->displayBlock('titulo', $context, $blocks);
+        echo "</h2>
+                            
 \t\t</div>
 \t\t<div id=\"bar\">
                     <ul>
@@ -79,28 +130,11 @@ class __TwigTemplate_fd1184e0404b24bbbdcdf48ce77d0635 extends Twig_Template
 \t\t</ul>\t\t\t\t
 \t\t</div>
                     <div id=\"content\">
-                \t<table id=\"entrieslist\">
-    \t\t\t";
+                        ";
         // line 39
-        $context['_parent'] = (array) $context;
-        $context['_seq'] = twig_ensure_traversable($this->getContext($context, "cursos"));
-        foreach ($context['_seq'] as $context["_key"] => $context["curso"]) {
-            // line 40
-            echo "        \t\t\t<tr><td>";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "curso"), "nombrecurso"), "html", null, true);
-            echo "</td><td id='buttons'><a href='delete/";
-            echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "curso"), "id"), "html", null, true);
-            echo "' id='deleteentry'></a>
-                \t\t<a href='#' id='editentry'></a></td></tr>
-    \t\t\t";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['curso'], $context['_parent'], $context['loop']);
-        $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 43
-        echo "                 
-        </table>\t\t
-                    </div>
+        $this->displayBlock('content', $context, $blocks);
+        // line 48
+        echo "                    </div>
                     <div class=\"clean\"></div>
                 </div>
             

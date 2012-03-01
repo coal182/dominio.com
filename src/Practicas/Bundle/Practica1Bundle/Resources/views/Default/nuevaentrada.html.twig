@@ -1,0 +1,30 @@
+{% extends "Practica1Bundle:Default:backend.html.twig" %}
+{% block content %}
+
+<form action="crearentrada" method="post"><fieldset><legend>Nueva Entrada</legend>   
+        <table>
+            <tr>
+                <td><label for="nombre">Titulo </label></td>
+                <td><input type="text" name="titulo" size="30" maxlength="80"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Contenido : </label></td>
+                <td><textarea name="contenido" cols="40" rows="20"></textarea></td>
+            </tr>
+        </table>
+
+</fieldset>
+<label for="enviar">
+<input type="submit" name="enviar" value="Enviar datos"></label>
+ </form>
+  
+{% endblock %}
+
+{% block nuevo %}
+        <div id="btnnew">    
+        <a href="nuevaentrada">
+            Nueva Entrada
+        </a>
+        </div>
+ {% endblock %}
+{% block titulo %}Lista de Usuarios{% endblock %}

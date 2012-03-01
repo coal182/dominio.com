@@ -38,6 +38,26 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'Practica1Bundle_cursopage' => true,
        'Practica1Bundle_adminpage' => true,
        'Practica1Bundle_deletecurso' => true,
+       'Practica1Bundle_editcurso' => true,
+       'manage_usuario' => true,
+       'manage_usuario_show' => true,
+       'manage_usuario_new' => true,
+       'manage_usuario_create' => true,
+       'manage_usuario_edit' => true,
+       'manage_usuario_update' => true,
+       'manage_usuario_delete' => true,
+       'manage_curso' => true,
+       'manage_curso_show' => true,
+       'manage_curso_new' => true,
+       'manage_curso_create' => true,
+       'manage_curso_edit' => true,
+       'manage_curso_update' => true,
+       'manage_curso_delete' => true,
+       'Practica1Bundle_contactopage' => true,
+       'Practica1Bundle_enviarmail' => true,
+       'Practica1Bundle_nuevaentrada' => true,
+       'Practica1Bundle_crearentrada' => true,
+       'Practica1Bundle_listarentradas' => true,
     );
 
     /**
@@ -184,5 +204,105 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getPractica1Bundle_deletecursoRouteInfo()
     {
         return array(array (  0 => 'idcurso',), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::deletecursoAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'idcurso',  ),  1 =>   array (    0 => 'text',    1 => '/delete',  ),));
+    }
+
+    private function getPractica1Bundle_editcursoRouteInfo()
+    {
+        return array(array (  0 => 'idcurso',), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::editcursoAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'idcurso',  ),  1 =>   array (    0 => 'text',    1 => '/edit',  ),));
+    }
+
+    private function getmanage_usuarioRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\UsuarioController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/manage/usuario/',  ),));
+    }
+
+    private function getmanage_usuario_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\UsuarioController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/manage/usuario',  ),));
+    }
+
+    private function getmanage_usuario_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\UsuarioController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/manage/usuario/new',  ),));
+    }
+
+    private function getmanage_usuario_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\UsuarioController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/manage/usuario/create',  ),));
+    }
+
+    private function getmanage_usuario_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\UsuarioController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/manage/usuario',  ),));
+    }
+
+    private function getmanage_usuario_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\UsuarioController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/manage/usuario',  ),));
+    }
+
+    private function getmanage_usuario_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\UsuarioController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/manage/usuario',  ),));
+    }
+
+    private function getmanage_cursoRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\CursoController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/manage/curso/',  ),));
+    }
+
+    private function getmanage_curso_showRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\CursoController::showAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/show',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/manage/curso',  ),));
+    }
+
+    private function getmanage_curso_newRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\CursoController::newAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/manage/curso/new',  ),));
+    }
+
+    private function getmanage_curso_createRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\CursoController::createAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/manage/curso/create',  ),));
+    }
+
+    private function getmanage_curso_editRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\CursoController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/edit',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/manage/curso',  ),));
+    }
+
+    private function getmanage_curso_updateRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\CursoController::updateAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/update',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/manage/curso',  ),));
+    }
+
+    private function getmanage_curso_deleteRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\CursoController::deleteAction',), array (  '_method' => 'post',), array (  0 =>   array (    0 => 'text',    1 => '/delete',  ),  1 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  2 =>   array (    0 => 'text',    1 => '/manage/curso',  ),));
+    }
+
+    private function getPractica1Bundle_contactopageRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::contactoAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/contacto',  ),));
+    }
+
+    private function getPractica1Bundle_enviarmailRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::enviarmailAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/enviarmail',  ),));
+    }
+
+    private function getPractica1Bundle_nuevaentradaRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::nuevaentradaAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/nuevaentrada',  ),));
+    }
+
+    private function getPractica1Bundle_crearentradaRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::crearentradaAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/crearentrada',  ),));
+    }
+
+    private function getPractica1Bundle_listarentradasRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Practicas\\Bundle\\Practica1Bundle\\Controller\\DefaultController::listarentradasAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/listarentradas',  ),));
     }
 }

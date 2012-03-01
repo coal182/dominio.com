@@ -103,4 +103,9 @@ class Curso
     {
         return $this->cursoid;
     }
+    
+    public function __toString()
+    {
+    		return $this->nombrecurso;
+    	}
 }

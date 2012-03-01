@@ -19,8 +19,9 @@
             </div>
             <div id="body">
 		<div id="title">
-                    <a id="btnnew" href="newentry.jsp">New Entry</a>	
-			<h2>Control Panel</h2>				
+                    	{% block nuevo %}{% endblock %}
+			<h2>{% block titulo %}Control Panel{% endblock %}</h2>
+                            
 		</div>
 		<div id="bar">
                     <ul>
@@ -35,13 +36,15 @@
 		</ul>				
 		</div>
                     <div id="content">
+                        {% block content %}
                 	<table id="entrieslist">
     			{% for curso in cursos %}
         			<tr><td>{{ curso.nombrecurso }}</td><td id='buttons'><a href='delete/{{ curso.id }}' id='deleteentry'></a>
-                		<a href='#' id='editentry'></a></td></tr>
+                		<a href='edit/{{ curso.id }}' id='editentry'></a></td></tr>
     			{% endfor %}
                  
-        </table>		
+        </table>	
+                            {% endblock %}
                     </div>
                     <div class="clean"></div>
                 </div>

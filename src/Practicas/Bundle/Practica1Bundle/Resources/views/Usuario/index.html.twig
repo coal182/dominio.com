@@ -1,0 +1,48 @@
+{% extends "Practica1Bundle:Default:backend.html.twig" %}
+{% block content %}
+
+
+<table class="records_list">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Telefono</th>
+            <th>Direccion</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for entity in entities %}
+        <tr>
+            <td><a href="{{ path('manage_usuario_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td>{{ entity.nombre }}</td>
+            <td>{{ entity.apellidos }}</td>
+            <td>{{ entity.telefono }}</td>
+            <td>{{ entity.direccion }}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('manage_usuario_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('manage_usuario_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+   
+{% endblock %}
+
+{% block nuevo %}
+        <div id="btnnew">    
+        <a href="{{ path('manage_usuario_new') }}">
+            Nuevo Usuario
+        </a>
+        </div>
+ {% endblock %}
+{% block titulo %}Lista de Usuarios{% endblock %}

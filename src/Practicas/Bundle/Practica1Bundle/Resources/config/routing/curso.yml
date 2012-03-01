@@ -1,0 +1,30 @@
+manage_curso:
+    pattern:  /
+    defaults: { _controller: "Practica1Bundle:Curso:index" }
+
+manage_curso_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "Practica1Bundle:Curso:show" }
+
+manage_curso_new:
+    pattern:  /new
+    defaults: { _controller: "Practica1Bundle:Curso:new" }
+
+manage_curso_create:
+    pattern:  /create
+    defaults: { _controller: "Practica1Bundle:Curso:create" }
+    requirements: { _method: post }
+
+manage_curso_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "Practica1Bundle:Curso:edit" }
+
+manage_curso_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "Practica1Bundle:Curso:update" }
+    requirements: { _method: post }
+
+manage_curso_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "Practica1Bundle:Curso:delete" }
+    requirements: { _method: post }

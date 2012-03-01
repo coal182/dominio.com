@@ -16,6 +16,9 @@ Practicas\Bundle\Practica1Bundle\Entity\Usuario:
     telefono:
       type: string
       length: 9
+    direccion:
+      type: string
+      length: 255
   manyToOne:
     curso:
       targetEntity: Curso
